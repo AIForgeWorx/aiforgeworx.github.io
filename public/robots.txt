@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aiforgeworx.com/sitemap-index.xml
+Sitemap: https://www.aiforgeworx.com/sitemap-index.xml
