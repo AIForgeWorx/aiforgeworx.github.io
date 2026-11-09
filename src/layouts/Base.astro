@@ -1,0 +1,86 @@
+---
+import '@fontsource-variable/bricolage-grotesque';
+import '@fontsource/instrument-sans/400.css';
+import '@fontsource/instrument-sans/500.css';
+import '@fontsource/instrument-sans/600.css';
+import '../styles/global.css';
+import { site, nav } from '../site.config';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description = site.tagline } = Astro.props;
+const fullTitle = title ? `${title} | ${site.name}` : `${site.name} | ${site.tagline}`;
+const path = Astro.url.pathname;
+const canonical = new URL(path, Astro.site);
+const year = new Date().getFullYear();
+---
+<!doctype html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/logo.png', Astro.site)} />
+    <meta name="theme-color" content="#082f50" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/" aria-label={`${site.name} home`}>
+          <img src="/logo.png" alt={site.name} width="689" height="115" />
+        </a>
+        <nav class="site-nav" aria-label="Main">
+          <ul>
+            {nav.map((item) => (
+              <li>
+                <a href={item.href} aria-current={path.startsWith(item.href) ? 'page' : undefined}>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-about">
+          <p class="footer-name">{site.legalName}</p>
+          <p>{site.tagline}. Based in {site.location}.</p>
+        </div>
+        <div>
+          <ul>
+            {nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+            <li><a href="/privacy/">Privacy policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+            <li><a href={site.linkedin} rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+        <p class="legal">© {year} {site.legalName} All product names and trademarks belong to their respective owners.</p>
+      </div>
+    </footer>
+  </body>
+</html>

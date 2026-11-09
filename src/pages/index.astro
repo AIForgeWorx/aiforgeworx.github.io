@@ -1,0 +1,146 @@
+---
+import Base from '../layouts/Base.astro';
+
+const trace = [
+  {
+    title: 'Personal information found and masked',
+    detail: 'The customer’s name and account number are removed before anything reaches the model.',
+  },
+  {
+    title: 'Answer drawn from approved sources only',
+    detail: 'The assistant searches the documents it was given, not the open web.',
+  },
+  {
+    title: 'Data stays where you need it',
+    detail: 'Processing runs in the region your privacy commitments require.',
+  },
+  {
+    title: 'Logged for audit',
+    detail: 'The question, sources and answer are recorded so your team can review them.',
+  },
+];
+---
+<Base>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>AI that’s useful, compliant and built to last</h1>
+        <p class="lede">
+          We help organizations decide where AI fits, meet their privacy and compliance
+          obligations, and build AI solutions that work in the real world.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="/contact/">Book a discovery call</a>
+          <a class="button button-quiet" href="/services/">See our services</a>
+        </div>
+      </div>
+
+      <figure class="trace" aria-label="Example of how a well-governed AI assistant handles a question">
+        <p class="trace-question">
+          <span>A customer asks</span>
+          “Can you tell me why my last claim was declined?”
+        </p>
+        <ol>
+          {trace.map((step, i) => (
+            <li style={`--i: ${i}`}>
+              <strong>{step.title}</strong>
+              {step.detail}
+            </li>
+          ))}
+        </ol>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="services-heading">
+    <div class="wrap">
+      <div class="section-intro">
+        <h2 id="services-heading">What we do</h2>
+        <p>Three services that work alone or as one engagement, from first idea to production.</p>
+      </div>
+
+      <dl class="service-list">
+        <div>
+          <dt>AI Strategy</dt>
+          <dd>
+            <p>
+              Find the AI opportunities worth pursuing, check your data and systems can support
+              them, and get a roadmap your leadership team can fund.
+            </p>
+          </dd>
+        </div>
+        <div>
+          <dt>AI Privacy &amp; Compliance</dt>
+          <dd>
+            <p>
+              Privacy impact assessments, AI risk assessments and governance frameworks that
+              satisfy regulators, auditors and your own customers.
+            </p>
+          </dd>
+        </div>
+        <div>
+          <dt>AI Development</dt>
+          <dd>
+            <p>
+              AI assistants, agents and automations designed, built and tested on the platforms
+              you already use, then handed over with documentation your team can maintain.
+              We specialize in Microsoft Copilot Studio and Microsoft Foundry.
+            </p>
+          </dd>
+        </div>
+      </dl>
+      <p style="margin-top: 1.5rem"><a href="/services/">See what each service includes</a></p>
+    </div>
+  </section>
+
+  <section class="section section-mist" aria-labelledby="process-heading">
+    <div class="wrap">
+      <div class="section-intro">
+        <h2 id="process-heading">How an engagement runs</h2>
+        <p>Short phases, each ending with something you can review.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <h3>Discover</h3>
+          <p>We map the problem, the people involved and the data the solution will touch.</p>
+        </li>
+        <li>
+          <h3>Assess</h3>
+          <p>We review privacy, security and compliance risks before any build starts.</p>
+        </li>
+        <li>
+          <h3>Build</h3>
+          <p>We build in your environment and test with real users and real questions.</p>
+        </li>
+        <li>
+          <h3>Govern</h3>
+          <p>We hand over monitoring, documentation and a plan for keeping the solution accurate.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="frameworks-heading">
+    <div class="wrap">
+      <div class="section-intro">
+        <h2 id="frameworks-heading">Frameworks we work within</h2>
+      </div>
+      <ul class="frameworks">
+        <li><strong>PIPEDA and BC privacy law</strong><span>Canada’s federal and provincial privacy requirements, including FIPPA for public bodies</span></li>
+        <li><strong>NIST AI RMF</strong><span>Risk management for trustworthy AI</span></li>
+        <li><strong>ISO/IEC 42001</strong><span>The international standard for AI management systems</span></li>
+        <li><strong>EU AI Act</strong><span>For organizations serving customers in Europe</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <div>
+        <h2>Thinking about AI?</h2>
+        <p>A 30-minute call is enough to work out where to start.</p>
+      </div>
+      <a class="button button-primary" href="/contact/">Book a discovery call</a>
+    </div>
+  </section>
+</Base>

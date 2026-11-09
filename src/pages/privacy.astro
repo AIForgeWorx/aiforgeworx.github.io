@@ -1,0 +1,69 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../site.config';
+const updated = 'November 2026';
+---
+<Base title="Privacy policy" description="How AIForgeWorx collects, uses and protects personal information.">
+  <section class="page-head">
+    <div class="wrap">
+      <h1>Privacy policy</h1>
+      <p>Last updated {updated}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap prose">
+      <!-- TEMPLATE: review this with a lawyer before publishing, and update it if
+           you add analytics, newsletters or other tools that collect information. -->
+
+      <p>
+        {site.legalName} (“we”) respects your privacy. This policy explains what personal
+        information we collect through this website, why, and how we protect it, in line with
+        Canada’s Personal Information Protection and Electronic Documents Act (PIPEDA) and
+        British Columbia’s Personal Information Protection Act (PIPA).
+      </p>
+
+      <h2>What we collect</h2>
+      <p>We collect only what you choose to send us through the contact form or by email:</p>
+      <ul>
+        <li>your name, work email and organization</li>
+        <li>the contents of your message</li>
+      </ul>
+      <p>This site doesn’t use advertising or tracking cookies.</p>
+
+      <h2>How we use it</h2>
+      <p>
+        We use your information only to respond to your enquiry and, if we work together, to
+        manage that engagement. We don’t sell or rent personal information, and we don’t use it
+        for marketing unless you ask us to.
+      </p>
+
+      <h2>Service providers</h2>
+      <p>
+        Contact form submissions are processed by Formspree, which may store data outside Canada,
+        including in the United States. This site is hosted on GitHub Pages. These providers are
+        bound by their own privacy and security commitments.
+      </p>
+
+      <h2>How long we keep it</h2>
+      <p>
+        We keep enquiries for up to two years, or longer if we enter into an engagement and the
+        information forms part of that business record.
+      </p>
+
+      <h2>Your rights</h2>
+      <p>
+        You can ask to see, correct or delete the personal information we hold about you, or
+        withdraw your consent to our using it. Email us at
+        <a href={`mailto:${site.email}`}>{site.email}</a> and we’ll respond within 30 days.
+      </p>
+
+      <h2>Questions or complaints</h2>
+      <p>
+        Contact our privacy officer at <a href={`mailto:${site.email}`}>{site.email}</a>. If you’re
+        not satisfied with our response, you can contact the Office of the Information and Privacy
+        Commissioner for British Columbia or the Office of the Privacy Commissioner of Canada.
+      </p>
+    </div>
+  </section>
+</Base>

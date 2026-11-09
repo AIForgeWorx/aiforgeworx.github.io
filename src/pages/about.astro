@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../site.config';
+---
+<Base title="About" description="AIForgeWorx is a British Columbia consultancy for AI strategy, privacy and compliance, and development.">
+  <section class="page-head">
+    <div class="wrap">
+      <h1>About AIForgeWorx</h1>
+      <p>A British Columbia consultancy for responsible, practical AI.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap two-col">
+      <div class="prose">
+        <!-- Replace this copy with your own story. -->
+        <p>
+          AIForgeWorx helps organizations move from AI interest to AI that works: chosen for the
+          right reasons, built properly and governed so it stays trustworthy.
+        </p>
+        <p>
+          Most AI projects don’t stall on the technology. They stall on unclear goals, privacy
+          and security reviews, or the question of who is accountable once the solution is live.
+          We treat those questions as part of the work, not a hurdle after it.
+        </p>
+        <h2>How we work</h2>
+        <ul>
+          <li>We start with the problem, not the technology.</li>
+          <li>We involve your privacy and security teams from the first workshop.</li>
+          <li>We build in your environment, so your data stays under your control.</li>
+          <li>We document everything, so your team can run the solution after we leave.</li>
+          <li>We’d rather recommend a smaller, safer first project than overpromise.</li>
+        </ul>
+      </div>
+
+      <aside class="aside-panel">
+        <h2>At a glance</h2>
+        <p><strong>Based in</strong><br />{site.location}</p>
+        <p><strong>Services</strong><br />AI Strategy, AI Privacy &amp; Compliance, AI Development</p>
+        <p><strong>Platforms</strong><br />Microsoft Copilot Studio, Microsoft Foundry</p>
+        <p><strong>Who we work with</strong><br />Public- and private-sector organizations</p>
+      </aside>
+    </div>
+  </section>
+</Base>
